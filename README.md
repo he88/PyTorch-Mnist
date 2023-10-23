@@ -8,7 +8,7 @@ python train.py
 ```
 The trained model will be saved in the 'model' folder.  
 ## Test
-If you want to test the performance of the trained model, you need to run it in the 'src' directory:
+If you want to test the performance of the trained model, you need to run it in the `src` folder:
 ```shell
 python test.py
 ```
