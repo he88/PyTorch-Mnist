@@ -1,8 +1,14 @@
 # PyTorch-Mnist
-Building a Convolutional Neural Network Based on PyTorch to Train and Recognize the Handwritten Digit Dataset MNIST;  
-基于PyTorch搭建卷积网络，实现手写数字数据集Mnist的训练与识别
-## Usage
-Open a terminal in the PyTorch-Mnist directory and run:
+Building a Convolutional Neural Network(CNN) Based on PyTorch to Train and Recognize the Handwritten Digit Dataset MNIST;  
+基于PyTorch搭建卷积神经网络(CNN)，实现手写数字数据集Mnist的训练与识别
+## Train
+If you want to train, enter `src` folder and run:
 ```shell
-python torch_mnist.py
+python train.py
+```
+The trained model will be saved in the 'model' folder.  
+## Test
+If you want to test the performance of the trained model, you need to run it in the 'src' directory:
+```shell
+python test.py
 ```
