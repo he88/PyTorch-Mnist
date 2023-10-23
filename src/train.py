@@ -14,8 +14,8 @@ torch.manual_seed(0)
 
 # 数据加载和预处理
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
-train_dataset = datasets.MNIST(root='./data', train=True, transform=transform, download=True)
-test_dataset = datasets.MNIST(root='./data', train=False, transform=transform, download=True)
+train_dataset = datasets.MNIST(root='../data', train=True, transform=transform, download=True)
+test_dataset = datasets.MNIST(root='../data', train=False, transform=transform, download=True)
 train_loader = DataLoader(dataset=train_dataset, batch_size=128, shuffle=True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=128, shuffle=False)
 
@@ -46,6 +46,7 @@ optimizer = optim.RMSprop(model.parameters())
 
 # 训练模型
 epochs = 5
+print("Start Training...")
 for epoch in range(epochs):
     running_loss = 0.0
     for i, data in enumerate(train_loader, 0):
@@ -59,6 +60,9 @@ for epoch in range(epochs):
     print(f'Epoch {epoch + 1}, Loss: {running_loss / (i + 1)}')
 
 print('Finished Training')
+
+#保存模型
+torch.save(model.state_dict(), '../model/mnist_model.pth')
 
 correct = 0
 total = 0
